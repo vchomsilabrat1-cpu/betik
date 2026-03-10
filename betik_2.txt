@@ -1,0 +1,44 @@
+#Dovlet Seyidov
+import random
+r=random.randint(1,6)
+print(r)
+r2=random.randint(1,6)
+print(r2)
+if (r%2==0 and r2%2==0): print ("Galatasaray")
+elif (r%2!=0 and r2%2!=0): print ("Fenerbahçe")
+else: print ("Beraberlik")
+
+skop- kod yazılan alan (blok {})
+
+#Dovlet Seyidov
+import random
+sifirlar=0;
+birler=0;
+for i in range(100):
+    r=random.random()
+    if (r>0.5):
+        birler=birler+1
+    else:
+        sifirlar=sifirlar+1
+print(sifirlar)
+print(birler)
+
+#Dovlet Seyidov
+import random
+gs=0;
+fb=0;
+ber=0;
+for i in range(3000):
+    r=random.randint(1,6)
+    #print(r)
+    r2=random.randint(1,6)
+    #print(r2)
+    if (r%2==0 and r2%2==0):
+        gs=gs+1
+    elif (r%2!=0 and r2%2!=0):
+        fb=fb+1
+    else:
+        ber=ber+1
+print("Galatasaray: ",gs*3/100,"%")
+print ("Fenerbahçe: ",fb*3/100,"%")
+print("Beraberlik: ",ber*3/100,"%")
