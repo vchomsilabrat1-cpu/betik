@@ -1,0 +1,85 @@
+değer gönderen= fonksiyon
+göndermeyen= prosedur
+
+import time
+time.sleep(1)
+---------------------------------------------------------------------------------------------------------------------------------------------
+ornek1:
+A=[[{
+    'isim':"Ahmed",
+    'yas':21,
+    'cinsiyet':"erkek"
+
+},
+{
+    'isim': "Recep",
+    'yas': 18,
+    'cinsiyet': "erkek"
+},
+{
+    'isim': "Enes",
+    'yas': 23,
+    'cinsiyet': "erkek"
+},
+{
+    'isim': "Ece",
+    'cinsiyet': "kadın"
+},
+{
+    'isim': "Esra",
+    'yas': 22,
+    'cinsiyet': "kadın"
+}]]
+
+for i in A:
+    for j in i:
+        try:
+            print(j['yas'])
+        except:
+            pass
+---------------------------------------------------------------------------------------------------------------------------------------------
+import random
+
+
+class ucan:
+    def __init__(self,ucak_tipi):
+        self.ucak_tipi=ucak_tipi
+        self.konumz==0
+
+    def __init__(self, ucak_tipi,f_sayisi ):
+        self.ucak_tipi = ucak_tipi
+        self.f_sayisi=f_sayisi
+        self.konumz == 0
+    def havalan(self):
+        if self.konumz==0:
+            print(self.ucak_tipi+"yerden havalandı")
+
+        elif self.konumz<1000:
+            self.konumz += 100
+            print(self.ucak_tipi + "yükseliyor")
+        else:
+            print(self.ucak_tipi+"irtifada")
+        pass
+    def konum(self):
+        if self.konumz==0:
+            print(self.ucak_tipi + "Ucuyor")
+        elif self.ucak_tipi>1000:
+            print(self.ucak_tipi + "düşüyor")
+        else:
+            print(self.ucak_tipi + "irtifada")
+    def alcal(self):
+        pass
+    def bombala(self):
+        if self.f_sayisi>0:
+            r=random.randint(1,10)
+        pass
+
+
+
+*****
+
+from main import *
+iha1=ucan("iha")
+iha1.konum()
+iha1.havalan()
+iha1.konum()
