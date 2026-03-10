@@ -1,0 +1,57 @@
+#main 
+import requests
+from bs4 import BeautifulSoup
+
+url='https://www.milligazete.com.tr/arsiv'
+def url_topla(ur,f_name):
+    r=requests.get(url)
+
+    soup=BeautifulSoup(r.content, 'html.parser')
+    list=soup.find_all("div", {"class": "col-lg-6"})
+    for i in list:
+        for link in i.find_all("a"):
+            my_link=link.get("href")+"\n"
+            print(my_link)
+            bas="https://www.milligazete.com.tr/arsiv"
+            yeni_link='{}{}'.format(bas,my_link)
+            print(yeni_link)
+
+            with open(f_name,"a",encoding="utf-8") as file:
+                file.write(yeni_link.strip()+"\n")
+
+file_name="Dovlet.txt"
+url_topla(url,file_name)
+
+urr="https://www.milligazete.com.tr/hamsi-tezgahlara-veda-etti-iste-trabzonda-guncel-balik-fiyatlari"
+
+def icerik_topla(urr,f_icerik):
+    pass
+    r=requests.get(urr)
+    soup=BeautifulSoup(r.content, 'html.parser')
+    print(soup)
+    date=soup.find("time",{"class":"fw-bold"}).gettext()
+    #print(date.getText())
+    title=soup.find("h1").getText()
+    print(title)
+    content=''
+    icerik=(soup.find("div",{"class":"article-text container-padding"}).find_all("p"))
+    for i in icerik:
+        content+=i.getText()
+    son='{} ; {} ; {} ; {}'.format(urr,date,title,content)
+
+    with open(f_icerik, "a", encoding="utf-8") as file:
+        file.write(son.strip() + "\n")
+output="melek.txt"
+icerik_topla(urr,output)
+#ödev: url,date,title,content+kategori yazmamız lazım ve dictionary çevir (veriler hepsini)
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+#2class
+from main import *
+
+f=open("Dovlet.txt")
+for i in range(18):
+    try:
+        link=f.readline()
+        icerik_topla(link.strip(),"melek2.txt")
+    except:
+        pass
