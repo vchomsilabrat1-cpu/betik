@@ -1,0 +1,29 @@
+#bu hesap makinesi sadece consoleda çalışır
+class smart_hm:
+    def __init__(self, x, y):
+        self.s1 = x
+        self.s2 = y
+        self.memory=[]
+    def yeniSayi(self,a,b):
+        self.s1=a
+        self.s2=b
+
+    def carpma(self):
+        sonuc = self.s1 * self.s2
+        self.memory.append(sonuc)
+        print(sonuc)
+
+    def topla(self):
+        sonuc = self.s1 + self.s2
+        self.memory.append(sonuc)
+        print(sonuc)
+
+    def cikar(self):
+        sonuc = self.s1 - self.s2
+        self.memory.append(sonuc)
+        print(sonuc)
+
+    def bolme(self):
+        sonuc = self.s1 / self.s2
+        self.memory.append(sonuc)
+        print(sonuc)
